@@ -140,19 +140,35 @@ typedef enum DEBOUNCE_STATE
 } debounceState_t;
 
 // ***** CONSTANTS *****
+//Default temperature constants that came with the firmware
+/*
 #define TEMPERATURE_ROOM 50
 #define TEMPERATURE_SOAK_MIN 150
 #define TEMPERATURE_SOAK_MAX 200
 #define TEMPERATURE_REFLOW_MAX 250
 #define TEMPERATURE_COOL_MIN 100
+*/
+
+// Temperature constants that fit the Amtech SMDLTLFP10T5 curve
+// In the future, use the buttons to be able to scroll through the reflow curves.
+
+#define TEMPERATURE_ROOM 50      //50 C room temperature? looks suspicious...
+#define TEMPERATURE_SOAK_MIN 90
+#define TEMPERATURE_SOAK_MAX 140
+#define TEMPERATURE_REFLOW_MAX 165
+#define TEMPERATURE_COOL_MIN 100
+
+
 #define SENSOR_SAMPLING_TIME 1000
 #define SOAK_TEMPERATURE_STEP 5
 #define SOAK_MICRO_PERIOD 9000
 #define DEBOUNCE_PERIOD_MIN 50
 
+
+
 // ***** PID PARAMETERS *****
 // ***** PRE-HEAT STAGE *****
-#define PID_KP_PREHEAT 100
+#define PID_KP_PREHEAT 175   //changed to 175 from 100 because the preheat slope isn't aggressive enough
 #define PID_KI_PREHEAT 0.025
 #define PID_KD_PREHEAT 20
 // ***** SOAKING STAGE *****
