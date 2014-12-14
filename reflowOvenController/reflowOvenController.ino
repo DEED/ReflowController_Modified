@@ -169,7 +169,7 @@ typedef enum DEBOUNCE_STATE
 // ***** PID PARAMETERS *****
 // ***** PRE-HEAT STAGE *****
 #define PID_KP_PREHEAT 175   //changed to 175 from 100 because the preheat slope isn't aggressive enough
-#define PID_KI_PREHEAT 0.025
+#define PID_KI_PREHEAT 0.025 //
 #define PID_KD_PREHEAT 20
 // ***** SOAKING STAGE *****
 #define PID_KP_SOAK 300
